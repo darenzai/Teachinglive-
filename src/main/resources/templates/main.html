@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>首页</title>
+    <meta charset="UTF-8">
+    <link href="css/bootstrap.min.css" rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link href="css/style.css" rel="stylesheet" th:href="@{/css/style.css}">
+    <link href="css/video.css" rel="stylesheet" th:href="@{/css/video.css}">
+</head>
+<body>
+<p th:text="${usercount}">nameqweqweqwe</p>
+<!--导航栏-->
+<div th:replace="header::header"></div>
+<!--导航栏-->
+
+<!--轮播图-->
+<div class="container banner">
+    <div class="carousel slide" data-interval="2500" data-ride="carousel" id="carousel-banner">
+        <ol class="carousel-indicators">
+            <li class="" data-slide-to="0" data-target="#carousel-banner"
+                th:data-slide-to="${iterStatus.index}"
+                th:each="carousel, iterStatus:${carouselList}"></li>
+        </ol>
+        <div class="carousel-inner">
+            <a class="carousel-item" href="#"
+               th:class="${iterStatus.index}==0?'carousel-item active':'carousel-item'"
+               th:each="carousel, iterStatus:${carouselList}"
+               th:href="@{/video/}+${carousel.videoId}">
+                <img alt="" class="d-block w-100" src="img/bg1.jpg" th:src="@{/img/}+${carousel.imageName}">
+            </a>
+        </div>
+        <a class="carousel-control-prev" data-slide="prev" href="#carousel-banner">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" data-slide="next" href="#carousel-banner">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+</div>
+<script charset="UTF-8" src="js/jquery-3.4.0.min.js" th:href="@{/js/jquery-3.4.0.min.js}"></script>
+<script charset="UTF-8" src="js/bootstrap.min.js" th:href="@{/js/bootstrap.min.js}"></script>
+<!--轮播图-->
+
+
+<!--名师推荐-->
+<div class="container teachers">
+    <div class="tetimonials">
+        <div class="inner">
+            <h4 class="subtitle">教师介绍</h4>
+            <div class="border"></div>
+            <div class="rowT">
+                <div class="colT">
+                    <div class="testimonial">
+                        <img alt="" src="/img/t1.jpg">
+                        <div class="name">王兆红</div>
+                        <p>主要研究方向是智能数据模型及其应用，先后主讲核心课程：《数据结构》、《C语言》、《数据库原理与应用》、《java程序设计》等；承担《课程设计》、《生产实习》、《毕业实习》、《毕业设计》等实践教学环节，年均教学工作量维持在400学时以上。</p>
+                    </div>
+                </div>
+                <div class="colT">
+                    <div class="testimonial">
+                        <img alt="" src="/img/t2.jpg">
+                        <div class="name">王承君</div>
+                        <p>主讲课程有数据库原理、大型数据库技术、数据结构、Web技术与应用、C语言程序设计等，教学效果连年优秀。主编高校规划教材3部，其中《WEB数据库技术应用教程》被列为国家“十一五”规划教材，并获第二届山东省高等学校优秀教材一等奖（编号：2BK1056）。</p>
+                    </div>
+                </div>
+                <div class="colT">
+                    <div class="testimonial">
+                        <img alt="" src="/img/t3.jpg">
+                        <div class="name">王宗江</div>
+                        <p>主要研究方向为软件工程理论与实践、数据库应用技术。主讲了《C语言程序设计》、《JAVA程序设计》、《计算机网络》、《数据库原理》、《操作系统》、《软件工程》等多门专业基础课及专业课。</p>
+                    </div>
+                </div>
+                <div class="colT">
+                    <div class="testimonial">
+                        <img alt="" src="/img/t4.jpg">
+                        <div class="name">曲秀清</div>
+                        <p>主要从事计算机专业的教学与科研工作。先后主讲过《C语言程序设计》、《数据结构》、《操作系统》、《软件工程》、《网络编程》、《Java面向对象程序设计》、《JavaEE轻量级解决方案－S2SH》、《统一建模语言》、《Android程序设计与实践》等课程的教学工作；承担相关课程的课程设计、实践教学环节等。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="more" href="#" th:href="@{/teachers}">查看更多</a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>我的消息</title>
+    <meta charset="UTF-8">
+    <link href="css/bootstrap.min.css" rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link href="css/style.css" rel="stylesheet" th:href="@{/css/style.css}">
+    <link href="css/video.css" rel="stylesheet" th:href="@{/css/video.css}">
+    <link href="css/zhibo.css" rel="stylesheet" th:href="@{/css/zhibo.css}">
+    <link href="css/user-left.css" rel="stylesheet" th:href="@{/css/user-left.css}">
+    <link href="css/user-right.css" rel="stylesheet" th:href="@{/css/user-right.css}">
+</head>
+<body>
+
+<!--导航栏-->
+<div th:replace="header::header"></div>
+<!--导航栏-->
+<div class="container userPage">
+    <div class="row">
+        <div class="col-3" id="left-info">
+            <div th:replace="user-student-sidebar::sidebar">
+            </div>
+        </div>
+        <div class="col-9" id="right-info">
+            <div class="tab-content">
+                <div class="tab-pane fade active show" id="message-content">
+                    <div class="container" id="myZhibo">
+                        <div class="infoVideo align-items-center" style="height: 250px;margin-bottom: 2%;"
+                             th:each="homeworkVM:${homeworkVMList}">
+                            <div class="name" style="padding-top: 2%;">
+                                <strong th:text="${homeworkVM.video.name}">Div+CSS布局</strong>
+                            </div>
+                            <div></div>
+                            <br/>
+                            <p>
+                                分数：<span th:text="${homeworkVM.score}">99</span>
+                            </p>
+                            <p>
+                                老师评价：<span th:text="${homeworkVM.comment}">评价</span>
+                            </p>
+                            <form action="#" method="post" th:action="@{/homework/}+${homeworkVM.id}">
+                                <input hidden="hidden" name="_method" value="delete"/>
+                                <button class="btn btn-danger" type="submit">删除作业</button>
+                                <a class="btn" href="#" th:href="@{/homework/download/}+${homeworkVM.id}">下载作业</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

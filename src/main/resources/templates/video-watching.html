@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Video</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link href="css/style.css" rel="stylesheet" th:href="@{/css/style.css}">
+    <link href="css/video.css" rel="stylesheet" th:href="@{/css/video.css}">
+</head>
+<body>
+<!--导航栏-->
+<div th:replace="header::header"></div>
+<!--导航栏-->
+
+<!--播放器-->
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <video controls="controls" th:src="${'/video/download/' + videoName}" width="100%"></video>
+        </div>
+    </div>
+    <div class="row">
+        <a class="btn btn-success" href="#" th:href="@{/video/material/}+${videoMaterial.id}" th:if="${videoMaterial}">下载视频资料</a>
+
+    </div>
+    <div class="row" th:if="${session.loginUserKind}=='student'">
+        <form action="#" enctype="multipart/form-data" method="post" th:action="@{/homework}">
+            <h3>提交作业</h3>
+            <input multiple name="homeworkFile" required type="file"/>
+            <input hidden="hidden" name="videoId" th:value="${videoId}" type="text"/>
+            <button class="btn btn-primary" type="submit">提交</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

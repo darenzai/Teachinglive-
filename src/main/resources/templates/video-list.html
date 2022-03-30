@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>课程回放</title>
+    <meta charset="UTF-8">
+    <link href="css/bootstrap.min.css" rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link href="css/style.css" rel="stylesheet" th:href="@{/css/style.css}">
+    <link href="css/video.css" rel="stylesheet" th:href="@{/css/video.css}">
+</head>
+<body>
+
+<!--导航栏-->
+<div th:replace="header::header"></div>
+<!--导航栏-->
+
+<div class="container">
+    <!-- 选项卡菜单-->
+    <div id="nav-subtile">
+        <ul class="nav category " id="myTab" role="tablist">
+            <li>
+                <a class="categoryItem" data-toggle="tab" href="#" role="tab" th:href="@{/video/}">全部</a>
+            </li>
+            <li>
+                <a class="categoryItem" data-toggle="tab" href="#" role="tab" th:each="course:${courseList}"
+                   th:href="@{/video/course/}+${course.id}" th:text="${course.name}">Java</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 选项卡面板 -->
+    <div class="tab-content col-12 float-left " id="myTabContent">
+        <div class="tab-pane fade col-12 active show" id="all-content">
+            <meta charset="UTF-8">
+            <div class="row classes container">
+                <div class="col-4" th:each="videoVM:${videoVMList}">
+                    <div class="testimonial">
+                        <h3 class="lesson-name" th:text="${videoVM.name}"></h3>
+                        <div class="nav smallTeacher">
+						<span>
+                            <li class="nav-teacher">
+                                <img src="/img/teacher.jpg">
+                            </li>
+                        </span>
+                            <span class="borderLine"></span>
+                            老师：<span class="host" th:text="${videoVM.teacher.nickname}">沈斌</span>
+                        </div>
+                        <div class="nav class-bottom">
+                            <span class="ml-auto lesson-category" style="width: 60%;" th:text="${videoVM.course.name}">Java</span>
+                        </div>
+                        <a class="btn" href="#" th:href="@{/video/}+${videoVM.id}">观看回放</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

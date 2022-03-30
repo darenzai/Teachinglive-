@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>教师介绍</title>
+    <meta charset="UTF-8">
+    <link href="css/bootstrap.min.css" rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link href="css/style.css" rel="stylesheet" th:href="@{/css/style.css}">
+    <link href="css/video.css" rel="stylesheet" th:href="@{/css/video.css}">
+</head>
+
+<body>
+<!--导航栏-->
+<div th:replace="header::header"></div>
+<!--导航栏-->
+
+<!--名师推荐-->
+<div class='container teachers'>
+    <div class='tetimonials'>
+        <div class='inner'>
+            <h4 class='subtitle'>教师介绍</h4>
+            <div class='border'></div>
+            <div class='row'>
+                <div class='col-3'>
+                    <div class='testimonial'>
+                        <img alt='' src='/img/t1.jpg'/>
+                        <div class='name'>王兆红</div>
+                        <p>主要研究方向是智能数据模型及其应用，先后主讲核心课程：《数据结构》、《C语言》、《数据库原理与应用》、《java程序设计》等；承担《课程设计》、《生产实习》、《毕业实习》、《毕业设计》等实践教学环节，年均教学工作量维持在400学时以上。</p>
+                    </div>
+                </div>
+                <div class='col-3'>
+                    <div class='testimonial'>
+                        <img alt='' src='/img/t2.jpg'/>
+                        <div class='name'>王承君</div>
+                        <p>主讲课程有数据库原理、大型数据库技术、数据结构、Web技术与应用、C语言程序设计等，教学效果连年优秀。主编高校规划教材3部，其中《WEB数据库技术应用教程》被列为国家“十一五”规划教材，并获第二届山东省高等学校优秀教材一等奖（编号：2BK1056）。</p>
+                    </div>
+                </div>
+                <div class='col-3'>
+                    <div class='testimonial'>
+                        <img alt='' src='/img/t3.jpg'/>
+                        <div class='name'>王宗江</div>
+                        <p>主要研究方向为软件工程理论与实践、数据库应用技术。主讲了《C语言程序设计》、《JAVA程序设计》、《计算机网络》、《数据库原理》、《操作系统》、《软件工程》等多门专业基础课及专业课。</p>
+                    </div>
+                </div>
+                <div class='col-3'>
+                    <div class='testimonial'>
+                        <img alt='' src='/img/t4.jpg'/>
+                        <div class='name'>曲秀清</div>
+                        <p>主要从事计算机专业的教学与科研工作。先后主讲过《C语言程序设计》、《数据结构》、《操作系统》、《软件工程》、《网络编程》、《Java面向对象程序设计》、《JavaEE轻量级解决方案－S2SH》、《统一建模语言》、《Android程序设计与实践》等课程的教学工作；承担相关课程的课程设计、实践教学环节等。</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class='tetimonials'>
+        <div class='inner'>
+            <div class='row'>
+                <div class='col-3'>
+                    <div class='testimonial'>
+                        <img alt='' src='/img/t5.jpg'/>
+                        <div class='name'>李可欣</div>
+                        <p>曾任某大型互联网企业前端架构工程师，完成众多前端开发项目，熟悉前端学习，针对前端开发出品多个教学视频，收到学生们的喜爱。</p>
+                    </div>
+                </div>
+                <div class='col-3'>
+                    <div class='testimonial'>
+                        <img alt='' src='/img/t6.jpg'/>
+                        <div class='name'>王毅</div>
+                        <p>著名软件测试工程师，有着7年的软件测试从业经验，对性能测试、白盒测试、全栈测试都有着很深的研究，精通Jmeter等各种工具的使用。</p>
+                    </div>
+                </div>
+                <div class='col-3'>
+                    <div class='testimonial'>
+                        <img alt='' src='/img/t7.jpg'/>
+                        <div class='name'>赵清进</div>
+                        <p>著名Python全栈工程师，有着多年的工作经验，对爬虫、web开发有着浓厚的兴趣，对于机器视觉方面有着很深的研究，时刻关注前言技术与发展趋势。</p>
+                    </div>
+                </div>
+                <div class='col-3'>
+                    <div class='testimonial'>
+                        <img alt='' src='/img/t8.jpg'/>
+                        <div class='name'>丁升晖</div>
+                        <p>曾就职与某知名大型互联网公司，负责后端开发工作，熟悉C、CPP、Java、Python等开发语言，有着5年的IT从业经验，深受好评。</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class='tetimonials'>
+        <div class='inner'>
+
+            <div class='row'>
+                <div class='col-3'>
+                    <div class='testimonial'>
+                        <img alt='' src='/img/t9.jpg'/>
+                        <div class='name'>吴仁飞</div>
+                        <p>资深算法工程师、机器学习工程师，在BAT多家企业有过工作经验，多次发表算法类文章，推荐算法的0-1搭建，开设多门算法类教学课程。</p>
+                    </div>
+                </div>
+                <div class='col-3'>
+                    <div class='testimonial'>
+                        <img alt='' src='/img/t10.jpg'/>
+                        <div class='name'>陆泽明</div>
+                        <p>多年的JAVA架构设计与研发经验。目前就职于某知名互联网公司，从事基础架构设计研发工作，有着丰富的经验，开设多个教学视频。</p>
+                    </div>
+                </div>
+                <div class='col-3'>
+                    <div class='testimonial'>
+                        <img alt='' src='/img/t11.jpg'/>
+                        <div class='name'>孙铎</div>
+                        <p>丰富的互联网产品开发经验，长期钻研前端开发技术，擅长前端架构技术以及实现复杂的前端交互。教学中注重与学员互动，乐于分享。</p>
+                    </div>
+                </div>
+                <div class='col-3'>
+                    <div class='testimonial'>
+                        <img alt='' src='/img/t12.jpg'/>
+                        <div class='name'>石可可</div>
+                        <p>从事互联网web 开发多年，热爱IT行业，对PHP，Python，Java都有涉猎， 实践经验丰富，富有激情，热爱分享喜欢专研新技术。</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--名师推荐-->
+</body>
+
+</html>
