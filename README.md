@@ -1,6 +1,5 @@
 # 在线教学直播平台
 
-基于 Spring Boot 和 [SRS](https://github.com/ossrs/srs)
 
 ## 平台功能
 
@@ -9,10 +8,6 @@
 * 直播提醒
 * 作业上传和批改
 
-## 常见问题解答
-
-* https://github.com/zhang564-code/live/wiki
-* https://github.com/jerryshell/live-teaching-platform/issues?q=
 
 ## 参考此项目需要你已经掌握以下内容
 
